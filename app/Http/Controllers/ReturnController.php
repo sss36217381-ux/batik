@@ -42,3 +42,4 @@ class ReturnController extends Controller
         return redirect()->route('returns.index')->with('success', 'Klaim retur berhasil dicatat.');
     }
 }
+

@@ -46,3 +46,4 @@ Dokumentasi ini merangkum *endpoints* utama yang disiapkan untuk modul pengujian
 * `GET /green-supply-chain`: Ambil seluruh indikator 5 pilar GSCOR dan riwayat evaluasi.
 * `PATCH /green-supply-chain/{id}`: Perbarui nilai riil aktual dan bobot dinamis ANP indikator.
 * `POST /green-supply-chain/recalculate`: Picu kalkulasi ulang indeks total Green SCOR.
+

@@ -124,3 +124,4 @@ flowchart LR
 Minggu 1 telah diselesaikan secara paripurna. Fondasi arsitektur sistem ERP Batik Madura kini telah stabil, terstandarisasi, memiliki basis data relasional yang utuh, dilengkapi autentikasi multi-peran, dan teruji secara otomatis menggunakan PHPUnit. 
 
 Proyek siap untuk melangkah ke **Minggu 2: Test Planning & Strategi SQA**.
+

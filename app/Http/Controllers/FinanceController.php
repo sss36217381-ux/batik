@@ -52,3 +52,4 @@ class FinanceController extends Controller
         return redirect()->route('finance.index')->with('success', 'Biaya pengeluaran berhasil dicatat.');
     }
 }
+

@@ -42,3 +42,4 @@ class RawMaterialController extends Controller
         return redirect()->route('raw-materials.index')->with('success', 'Bahan baku berhasil dihapus.');
     }
 }
+

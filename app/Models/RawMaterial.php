@@ -44,3 +44,4 @@ class RawMaterial extends Model
         return $this->stock <= $this->min_stock;
     }
 }
+

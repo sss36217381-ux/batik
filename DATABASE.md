@@ -134,3 +134,4 @@ erDiagram
 ### M. Tabel `green_scor_metrics` & `green_scor_results`
 * `green_scor_metrics`: `code`, `dimension` (`PLAN`, `SOURCE`, `MAKE`, `DELIVER`, `RETURN`), `metric_name`, `unit`, `target_value`, `actual_value`, `weight` (bobot ANP dinamis), `normalized_score` (Snorm De Boer), `final_score`.
 * `green_scor_results`: `evaluation_period`, `evaluation_date`, `plan_score`, `source_score`, `make_score`, `deliver_score`, `return_score`, `total_index`, `category` (`Poor`, `Marginal`, `Average`, `Good`, `Excellent`), `evaluated_by`.
+

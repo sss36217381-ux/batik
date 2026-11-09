@@ -42,3 +42,4 @@ Format pencatatan bug mengadopsi standar **GitHub Issues Defect Tracking** untuk
 | **BUG-001** | Assertion `assertSee('ERP BATIK')` gagal akibat perbedaan case dengan teks view | Testing | Low | **RESOLVED** | Mengubah target string assertion menjadi `ERP Batik Madura`. |
 | **BUG-002** | Ekstensi `pdo_pgsql` tidak aktif secara default pada runtime PHP lokal | Database | Medium | **RESOLVED** | Mengaktifkan `extension=pdo_pgsql` dan `extension=pgsql` pada `php.ini`. |
 | **BUG-003** | Eksekusi file `npm.ps1` terblokir oleh Windows Execution Policy | Build Script | Medium | **RESOLVED** | Menggunakan wrapper `cmd /c` untuk eksekusi Vite build secara konsisten. |
+

@@ -51,3 +51,4 @@ class ProductionController extends Controller
         return redirect()->route('production.index')->with('success', "Order produksi {$order->order_number} berhasil dimulai.");
     }
 }
+

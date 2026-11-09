@@ -59,3 +59,4 @@ class PurchaseController extends Controller
         return redirect()->route('purchases.index')->with('success', 'Transaksi pembelian berhasil disimpan dan stok telah bertambah.');
     }
 }
+

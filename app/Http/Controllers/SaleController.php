@@ -67,3 +67,4 @@ class SaleController extends Controller
         return redirect()->route('sales.index')->with('success', "Transaksi penjualan {$sale->invoice_number} berhasil diproses.");
     }
 }
+

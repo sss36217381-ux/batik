@@ -37,3 +37,4 @@ class CustomerController extends Controller
         return redirect()->route('customers.index')->with('success', 'Pelanggan berhasil dihapus.');
     }
 }
+

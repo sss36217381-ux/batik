@@ -33,3 +33,4 @@ class GreenScorResult extends Model
         'total_index' => 'decimal:4',
     ];
 }
+

@@ -86,3 +86,4 @@ class GreenScorCalculationTest extends TestCase
         ]);
     }
 }
+

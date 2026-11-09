@@ -111,3 +111,4 @@ class GreenSupplyChainController extends Controller
             ->with('success', "Indeks Green Supply Chain berhasil dihitung ulang! Skor: {$result->total_index} (Kategori: {$result->category}).");
     }
 }
+

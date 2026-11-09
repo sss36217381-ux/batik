@@ -36,3 +36,4 @@ class ShipmentController extends Controller
         return redirect()->route('shipments.index')->with('success', 'Data pengiriman pesanan berhasil dibuat.');
     }
 }
+

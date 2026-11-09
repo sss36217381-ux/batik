@@ -37,3 +37,4 @@ class ProductionDetail extends Model
         return $this->belongsTo(RawMaterial::class);
     }
 }
+

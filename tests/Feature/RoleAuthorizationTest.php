@@ -66,3 +66,4 @@ class RoleAuthorizationTest extends TestCase
         $response->assertSee('Dashboard Operasional ERP');
     }
 }
+

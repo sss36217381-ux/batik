@@ -43,3 +43,4 @@ class EnsureUserHasRole
         abort(403, 'Akses Ditolak: Peran (' . ($user->role?->display_name ?? 'Tanpa Peran') . ') Anda tidak memiliki izin untuk fitur ini.');
     }
 }
+

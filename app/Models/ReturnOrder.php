@@ -41,3 +41,4 @@ class ReturnOrder extends Model
         return $this->hasMany(ReturnDetail::class, 'return_id');
     }
 }
+

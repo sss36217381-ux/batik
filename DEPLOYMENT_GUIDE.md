@@ -65,3 +65,4 @@ Disediakan berkas `docker-compose.yml` untuk menjalankan PostgreSQL secara teris
 * **Produksi:** `produksi@batikmadura.id` / `password`
 * **Pembelian:** `pembelian@batikmadura.id` / `password`
 * **Penjualan:** `penjualan@batikmadura.id` / `password`
+

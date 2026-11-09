@@ -27,3 +27,4 @@ Status Proyek: **Minggu 1 Selesai** (Siap Menuju Minggu 2)
 * Seluruh 15 modul aplikasi ERP telah memiliki tabel basis data relasional, model Eloquent, controller, dan tampilan Blade responsif.
 * Pengujian otomatis unit & feature pada level framework mencapai 100% kelulusan (11 test cases passed).
 * Tidak ada perubahan arsitektur destruktif yang diperbolehkan tanpa persetujuan eksplisit pengguna.
+

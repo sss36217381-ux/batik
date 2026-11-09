@@ -19,3 +19,4 @@ Format changelog ini mengacu pada standar [Keep a Changelog](https://keepachange
 * Seeder basis data realistis untuk pengrajin Batik Tulis Madura (Gentongan, Aromanis, Lancor, pewarna alami daun tom/indigofera & kulit tingi).
 * 11 unit & feature test cases menggunakan PHPUnit dengan tingkat kelulusan 100%.
 * Dokumentasi proyek komprehensif pada `docs/week-01/README.md`, `DATABASE.md`, `PROJECT_PROGRESS.md`.
+

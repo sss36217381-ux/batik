@@ -59,3 +59,4 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index')->with('success', 'Penyesuaian stok berhasil dicatat ke kartu stok.');
     }
 }
+
