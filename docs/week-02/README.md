@@ -92,3 +92,4 @@ flowchart LR
 Minggu 2 telah selesai dengan hasil optimal. Dokumen Test Plan berstandar industri telah tersedia, ruang lingkup dan risiko telah teridentifikasi secara komprehensif, serta suite pengujian otomatis telah diperluas menjadi 16 test cases dengan kelulusan 100%.
 
 Proyek siap untuk melangkah ke **Minggu 3 & 4 (Black-Box Testing: Equivalence Partitioning, Boundary Value Analysis, & Decision Table)**.
+

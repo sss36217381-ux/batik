@@ -94,3 +94,4 @@ class InventoryBusinessRuleTest extends TestCase
         ]);
     }
 }
+
