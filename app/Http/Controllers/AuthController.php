@@ -34,7 +34,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials, $remember)) {
             $user = Auth::user();
 
-            if (!$user->is_active) {
+            if (! $user->is_active) {
                 Auth::logout();
                 $request->session()->invalidate();
                 $request->session()->regenerateToken();
@@ -45,7 +45,7 @@ class AuthController extends Controller
             $request->session()->regenerate();
 
             return redirect()->intended(route('dashboard'))
-                ->with('success', 'Selamat datang kembali, ' . $user->name . '! (' . ($user->role?->display_name ?? 'User') . ')');
+                ->with('success', 'Selamat datang kembali, '.$user->name.'! ('.($user->role?->display_name ?? 'User').')');
         }
 
         return back()->withInput($request->only('email', 'remember'))
@@ -61,4 +61,3 @@ class AuthController extends Controller
         return redirect()->route('login')->with('success', 'Anda telah berhasil keluar dari sesi ERP.');
     }
 }
-

@@ -36,4 +36,3 @@ class PurchaseDetail extends Model
         return $this->belongsTo(RawMaterial::class);
     }
 }
-

@@ -56,4 +56,3 @@ class ProductionOrder extends Model
         return $this->hasMany(ProductionDetail::class);
     }
 }
-

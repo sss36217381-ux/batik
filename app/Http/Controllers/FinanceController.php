@@ -41,7 +41,7 @@ class FinanceController extends Controller
         ]);
 
         Expense::create([
-            'expense_number' => 'EXP-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(2))),
+            'expense_number' => 'EXP-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
             'category' => $validated['category'],
             'amount' => $validated['amount'],
             'expense_date' => $validated['expense_date'],
@@ -52,4 +52,3 @@ class FinanceController extends Controller
         return redirect()->route('finance.index')->with('success', 'Biaya pengeluaran berhasil dicatat.');
     }
 }
-

@@ -30,4 +30,3 @@ class GreenScorMetric extends Model
         'final_score' => 'decimal:2',
     ];
 }
-

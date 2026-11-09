@@ -12,6 +12,7 @@ class ProductController extends Controller
     public function index(): View
     {
         $products = Product::latest()->paginate(10);
+
         return view('modules.products.index', compact('products'));
     }
 
@@ -39,7 +40,7 @@ class ProductController extends Controller
     public function destroy(Product $product): RedirectResponse
     {
         $product->delete();
+
         return redirect()->route('products.index')->with('success', 'Produk batik berhasil dihapus.');
     }
 }
-

@@ -34,7 +34,7 @@ class ProductionController extends Controller
         ]);
 
         $order = ProductionOrder::create([
-            'order_number' => 'PRD-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(2))),
+            'order_number' => 'PRD-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
             'target_product_id' => $validated['target_product_id'],
             'planned_quantity' => $validated['planned_quantity'],
             'actual_quantity' => 0,
@@ -51,4 +51,3 @@ class ProductionController extends Controller
         return redirect()->route('production.index')->with('success', "Order produksi {$order->order_number} berhasil dimulai.");
     }
 }
-

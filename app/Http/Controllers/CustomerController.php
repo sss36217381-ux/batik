@@ -12,6 +12,7 @@ class CustomerController extends Controller
     public function index(): View
     {
         $customers = Customer::withCount('sales')->latest()->paginate(10);
+
         return view('modules.customers.index', compact('customers'));
     }
 
@@ -34,7 +35,7 @@ class CustomerController extends Controller
     public function destroy(Customer $customer): RedirectResponse
     {
         $customer->delete();
+
         return redirect()->route('customers.index')->with('success', 'Pelanggan berhasil dihapus.');
     }
 }
-

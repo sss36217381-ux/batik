@@ -94,7 +94,7 @@ class GreenSupplyChainController extends Controller
         };
 
         $result = GreenScorResult::create([
-            'evaluation_period' => 'Evaluasi ' . now()->format('F Y'),
+            'evaluation_period' => 'Evaluasi '.now()->format('F Y'),
             'evaluation_date' => now()->toDateString(),
             'plan_score' => $planScore,
             'source_score' => $sourceScore,
@@ -111,4 +111,3 @@ class GreenSupplyChainController extends Controller
             ->with('success', "Indeks Green Supply Chain berhasil dihitung ulang! Skor: {$result->total_index} (Kategori: {$result->category}).");
     }
 }
-

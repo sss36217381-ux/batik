@@ -47,4 +47,3 @@ class Product extends Model
         return $this->stock <= $this->min_stock;
     }
 }
-

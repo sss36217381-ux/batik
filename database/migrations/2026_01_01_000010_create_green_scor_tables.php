@@ -38,7 +38,7 @@ return new class extends Migration
                 'Marginal',    // 40 - 50
                 'Average',     // 50 - 70 (Ref artikel: 65.52)
                 'Good',        // 70 - 90
-                'Excellent'    // > 90
+                'Excellent',    // > 90
             ])->default('Average');
             $table->text('notes')->nullable();
             $table->string('evaluated_by')->nullable();
@@ -52,4 +52,3 @@ return new class extends Migration
         Schema::dropIfExists('green_scor_metrics');
     }
 };
-

@@ -43,7 +43,7 @@ class User extends Authenticatable
 
     public function hasRole(string|array $roles): bool
     {
-        if (!$this->role) {
+        if (! $this->role) {
             return false;
         }
 

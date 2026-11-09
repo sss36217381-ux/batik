@@ -42,7 +42,7 @@ class SaleController extends Controller
         $grandTotal = max(0, $subtotal - $discount);
 
         $sale = Sale::create([
-            'invoice_number' => 'INV-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(2))),
+            'invoice_number' => 'INV-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
             'customer_id' => $validated['customer_id'],
             'user_id' => auth()->id(),
             'sale_date' => now()->toDateString(),
@@ -67,4 +67,3 @@ class SaleController extends Controller
         return redirect()->route('sales.index')->with('success', "Transaksi penjualan {$sale->invoice_number} berhasil diproses.");
     }
 }
-

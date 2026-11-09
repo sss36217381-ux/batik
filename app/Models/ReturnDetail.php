@@ -28,4 +28,3 @@ class ReturnDetail extends Model
         return $this->belongsTo(ReturnOrder::class, 'return_id');
     }
 }
-

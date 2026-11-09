@@ -24,4 +24,3 @@ class Inventory extends Model
         'last_counted_at' => 'datetime',
     ];
 }
-

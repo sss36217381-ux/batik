@@ -79,4 +79,3 @@ class MasterDataValidationTest extends TestCase
         $response->assertSessionHasErrors(['eco_rating']);
     }
 }
-

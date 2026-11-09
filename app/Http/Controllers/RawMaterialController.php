@@ -12,6 +12,7 @@ class RawMaterialController extends Controller
     public function index(): View
     {
         $rawMaterials = RawMaterial::latest()->paginate(10);
+
         return view('modules.raw_materials.index', compact('rawMaterials'));
     }
 
@@ -39,7 +40,7 @@ class RawMaterialController extends Controller
     public function destroy(RawMaterial $rawMaterial): RedirectResponse
     {
         $rawMaterial->delete();
+
         return redirect()->route('raw-materials.index')->with('success', 'Bahan baku berhasil dihapus.');
     }
 }
-

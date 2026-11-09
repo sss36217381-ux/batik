@@ -13,6 +13,7 @@ class RoleAuthorizationTest extends TestCase
     use RefreshDatabase;
 
     protected User $adminUser;
+
     protected User $cashierUser;
 
     protected function setUp(): void
@@ -66,4 +67,3 @@ class RoleAuthorizationTest extends TestCase
         $response->assertSee('Dashboard Operasional ERP');
     }
 }
-

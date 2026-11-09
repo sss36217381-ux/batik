@@ -33,9 +33,9 @@ class InventoryController extends Controller
         if ($validated['item_type'] === 'product') {
             $item = Product::findOrFail($validated['item_id']);
             if (in_array($validated['movement_type'], ['out', 'waste'])) {
-                $item->decrement('stock', (int)$validated['quantity']);
+                $item->decrement('stock', (int) $validated['quantity']);
             } else {
-                $item->increment('stock', (int)$validated['quantity']);
+                $item->increment('stock', (int) $validated['quantity']);
             }
         } else {
             $item = RawMaterial::findOrFail($validated['item_id']);
@@ -59,4 +59,3 @@ class InventoryController extends Controller
         return redirect()->route('inventory.index')->with('success', 'Penyesuaian stok berhasil dicatat ke kartu stok.');
     }
 }
-

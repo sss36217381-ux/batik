@@ -15,7 +15,9 @@ class InventoryBusinessRuleTest extends TestCase
     use RefreshDatabase;
 
     protected User $cashierUser;
+
     protected Customer $customer;
+
     protected Product $product;
 
     protected function setUp(): void
@@ -94,4 +96,3 @@ class InventoryBusinessRuleTest extends TestCase
         ]);
     }
 }
-

@@ -35,7 +35,7 @@ class PurchaseController extends Controller
         $rawMat = RawMaterial::find($validated['raw_material_id']);
 
         $purchase = Purchase::create([
-            'purchase_number' => 'PO-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(2))),
+            'purchase_number' => 'PO-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
             'supplier_id' => $validated['supplier_id'],
             'user_id' => auth()->id(),
             'purchase_date' => $validated['purchase_date'],
@@ -59,4 +59,3 @@ class PurchaseController extends Controller
         return redirect()->route('purchases.index')->with('success', 'Transaksi pembelian berhasil disimpan dan stok telah bertambah.');
     }
 }
-

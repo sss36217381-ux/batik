@@ -43,10 +43,10 @@ class UserController extends Controller
             return back()->with('error', 'Anda tidak dapat menonaktifkan akun yang sedang aktif digunakan.');
         }
 
-        $user->update(['is_active' => !$user->is_active]);
+        $user->update(['is_active' => ! $user->is_active]);
 
         $statusText = $user->is_active ? 'diaktifkan' : 'dinonaktifkan';
+
         return redirect()->route('users.index')->with('success', "Akun {$user->name} berhasil {$statusText}.");
     }
 }
-

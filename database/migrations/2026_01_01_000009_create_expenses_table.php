@@ -17,7 +17,7 @@ return new class extends Migration
                 'gaji_pengrajin',
                 'pengolahan_limbah_ipal',
                 'pemeliharaan_alat',
-                'lain_lain'
+                'lain_lain',
             ]);
             $table->decimal('amount', 14, 2);
             $table->date('expense_date');
@@ -32,4 +32,3 @@ return new class extends Migration
         Schema::dropIfExists('expenses');
     }
 };
-

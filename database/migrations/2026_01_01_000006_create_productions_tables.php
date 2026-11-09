@@ -23,7 +23,7 @@ return new class extends Migration
                 'pewarnaan',         // Pewarnaan (alami/sintetis)
                 'pelorotan',         // Merebus untuk meluruhkan malam (water intensive)
                 'penjemuran',        // Pengeringan alami
-                'finishing'          // Quality check & packing
+                'finishing',          // Quality check & packing
             ])->default('pola_desain');
             $table->enum('status', ['draft', 'in_progress', 'completed', 'cancelled'])->default('draft');
             // Green SCOR Make Indicators:
@@ -55,4 +55,3 @@ return new class extends Migration
         Schema::dropIfExists('production_orders');
     }
 };
-

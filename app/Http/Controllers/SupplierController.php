@@ -12,6 +12,7 @@ class SupplierController extends Controller
     public function index(): View
     {
         $suppliers = Supplier::withCount('purchases')->latest()->paginate(10);
+
         return view('modules.suppliers.index', compact('suppliers'));
     }
 
@@ -39,7 +40,7 @@ class SupplierController extends Controller
     public function destroy(Supplier $supplier): RedirectResponse
     {
         $supplier->delete();
+
         return redirect()->route('suppliers.index')->with('success', 'Pemasok berhasil dihapus.');
     }
 }
-

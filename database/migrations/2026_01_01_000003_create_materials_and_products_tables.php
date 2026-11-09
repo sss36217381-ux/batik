@@ -17,7 +17,7 @@ return new class extends Migration
                 'malam',                 // Malam tawon, malam klowong, lilin batik
                 'pewarna_alami',         // Kulit tingi, jolawe, tegeran, indigofera
                 'pewarna_sintetis',      // Remazol, Naptol, Indigosol
-                'bahan_pendukung'        // Soda abu, waterglass, tawas, kapur
+                'bahan_pendukung',        // Soda abu, waterglass, tawas, kapur
             ]);
             $table->string('unit');       // meter, kg, gram, liter, bks
             $table->decimal('stock', 12, 2)->default(0);
@@ -51,4 +51,3 @@ return new class extends Migration
         Schema::dropIfExists('raw_materials');
     }
 };
-

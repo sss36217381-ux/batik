@@ -12,6 +12,7 @@ class ReturnController extends Controller
     public function index(): View
     {
         $returns = ReturnOrder::with('user')->latest()->paginate(10);
+
         return view('modules.returns.index', compact('returns'));
     }
 
@@ -27,7 +28,7 @@ class ReturnController extends Controller
         ]);
 
         ReturnOrder::create([
-            'return_number' => 'RET-' . date('Ymd') . '-' . strtoupper(bin2hex(random_bytes(2))),
+            'return_number' => 'RET-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
             'return_type' => $validated['return_type'],
             'reference_id' => 1,
             'party_name' => $validated['party_name'],
@@ -42,4 +43,3 @@ class ReturnController extends Controller
         return redirect()->route('returns.index')->with('success', 'Klaim retur berhasil dicatat.');
     }
 }
-
