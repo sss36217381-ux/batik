@@ -5,8 +5,9 @@ Dokumentasi ini merangkum strategi pengujian, konfigurasi test runner, dan riway
 ---
 
 ## 1. Strategi Pengujian (Berdasarkan V-Model)
-* **Unit Testing (PHPUnit/Pest):** Menguji logika perhitungan matematika diskon, penyesuaian stok, serta rumus normalisasi skor Snorm De Boer pada Green SCOR.
-* **Feature & Integration Testing:** Menguji pengalihan rute (middleware otorisasi peran), interaksi form request, dan integritas transaksi database (ACID).
+* **Test Planning (IEEE 829):** Terarsip pada `docs/week-02/TEST_PLAN_DOCUMENT.md`.
+* **Unit Testing (PHPUnit):** Menguji logika perhitungan matematika diskon, penyesuaian stok, serta rumus normalisasi skor Snorm De Boer pada Green SCOR.
+* **Feature & Integration Testing:** Menguji pengalihan rute (middleware otorisasi peran), interaksi form request, validasi master data unik, dan integritas transaksi database (ACID).
 * **Automated Regression Suite:** Dijalankan secara otomatis sebelum setiap commit dan merge ke branch utama.
 
 ---
@@ -16,10 +17,14 @@ Dokumentasi ini merangkum strategi pengujian, konfigurasi test runner, dan riway
 Untuk menjalankan seluruh pengujian otomatis:
 ```bash
 php artisan test
+# atau
+vendor/bin/phpunit
 ```
 
 Untuk menjalankan file pengujian tertentu:
 ```bash
+php artisan test tests/Feature/MasterDataValidationTest.php
+php artisan test tests/Feature/InventoryBusinessRuleTest.php
 php artisan test tests/Feature/AuthenticationTest.php
 php artisan test tests/Feature/RoleAuthorizationTest.php
 php artisan test tests/Feature/GreenScorCalculationTest.php
@@ -27,7 +32,7 @@ php artisan test tests/Feature/GreenScorCalculationTest.php
 
 ---
 
-## 3. Matriks Hasil Pengujian (Baseline Minggu 1)
+## 3. Matriks Hasil Pengujian (Perkembangan Minggu 2)
 
 | Suite Uji | Nama Uji | Jenis | Assertions | Status |
 | :--- | :--- | :---: | :---: | :---: |
@@ -42,6 +47,10 @@ php artisan test tests/Feature/GreenScorCalculationTest.php
 | `RoleAuthorizationTest` | `test_authenticated_user_can_access_dashboard` | Feature | 2 | **PASSED** |
 | `GreenScorCalculationTest` | `test_green_scor_metric_can_be_updated_and_normalized` | Feature | 2 | **PASSED** |
 | `GreenScorCalculationTest` | `test_recalculate_generates_new_evaluation_result` | Feature | 2 | **PASSED** |
+| `MasterDataValidationTest` | `test_product_creation_requires_mandatory_fields` | Feature | 6 | **PASSED** |
+| `MasterDataValidationTest` | `test_product_code_must_be_unique` | Feature | 1 | **PASSED** |
+| `MasterDataValidationTest` | `test_supplier_creation_validates_eco_rating` | Feature | 1 | **PASSED** |
+| `InventoryBusinessRuleTest` | `test_sale_cannot_exceed_available_product_stock` | Feature | 2 | **PASSED** |
+| `InventoryBusinessRuleTest` | `test_sale_successfully_reduces_product_stock_and_calculates_total` | Feature | 13 | **PASSED** |
 
-**Total:** 11 Passed (23 assertions) &bull; Durasi: ~1.7 detik &bull; Success Rate: 100%.
-
+**Total:** 16 Passed (41 assertions) &bull; Durasi: ~3.1 detik &bull; Success Rate: 100%.

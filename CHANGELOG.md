@@ -4,6 +4,19 @@ Format changelog ini mengacu pada standar [Keep a Changelog](https://keepachange
 
 ---
 
+## [v0.2.0] - 2026-11-09 (Minggu 2: Test Planning & Risk Analysis)
+
+### Ditambahkan (Added)
+* Dokumen formal **Test Plan berstandar IEEE 829 / ISO/IEC/IEEE 29119** (`docs/week-02/TEST_PLAN_DOCUMENT.md`) yang mencakup estimasi sumber daya, jadwal uji 16 minggu, kriteria masuk/keluar (*Entry & Exit criteria*), kriteria penundaan (*Suspension/Resumption*), dan deliverables pengujian.
+* Matriks Analisis Risiko Pengujian Perangkat Lunak (*Test Risk Assessment Matrix*) dengan 5 risiko kritis operasional (pencegahan *race condition* kasir, akurasi pembulatan HPP desimal, sanitasi bobot ANP GSCOR, dan isolasi role RBAC).
+* Laporan RPS Minggu 2 komprehensif pada `docs/week-02/README.md`.
+* Automated Feature Test Suite baru:
+  * `tests/Feature/MasterDataValidationTest.php`: Memvalidasi field wajib produk, keunikan kode SKU motif batik, dan batas rating ramah lingkungan supplier (1-5).
+  * `tests/Feature/InventoryBusinessRuleTest.php`: Memvalidasi penolakan transaksi kasir saat jumlah checkout melebihi kuantitas stok fisik gudang, kalkulasi diskon, dan pengurangan stok otomatis.
+* Peningkatan jumlah pengujian otomatis menjadi 16 test cases dan 41 assertions dengan tingkat kelulusan 100%.
+
+---
+
 ## [v0.1.0] - 2026-11-02 (Minggu 1: Fundamental SQA & Baseline)
 
 ### Ditambahkan (Added)
@@ -19,4 +32,3 @@ Format changelog ini mengacu pada standar [Keep a Changelog](https://keepachange
 * Seeder basis data realistis untuk pengrajin Batik Tulis Madura (Gentongan, Aromanis, Lancor, pewarna alami daun tom/indigofera & kulit tingi).
 * 11 unit & feature test cases menggunakan PHPUnit dengan tingkat kelulusan 100%.
 * Dokumentasi proyek komprehensif pada `docs/week-01/README.md`, `DATABASE.md`, `PROJECT_PROGRESS.md`.
-
