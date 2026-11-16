@@ -4,6 +4,24 @@ Format changelog ini mengacu pada standar [Keep a Changelog](https://keepachange
 
 ---
 
+## [v0.3.0] - 2026-11-16 (Minggu 3: Black-Box Testing - EP & BVA)
+
+### Ditambahkan (Added)
+* Dokumen spesifikasi uji **Black-Box Testing dengan Equivalence Partitioning (EP) dan Boundary Value Analysis (BVA)** (`docs/week-03/TEST_CASE_BLACKBOX_EP_BVA.md`).
+* Laporan pelaksanaan RPS Pekan 3 pada `docs/week-03/README.md`.
+* Automated Feature Test Suite `tests/Feature/BlackBoxEpBvaTest.php` mencakup 4 metode uji:
+  * `test_pos_checkout_quantity_boundary_values`: Nilai batas kuantitas checkout POS ($Q = 0, 1, \text{stok}, \text{stok} + 1$).
+  * `test_pos_checkout_discount_boundary_values`: Nilai batas diskon nominal kasir ($-1, 0, \text{subtotal}, \text{subtotal} + 1$).
+  * `test_stock_opname_adjustment_equivalence_partitioning`: Partisi ekuivalensi mutasi stok barang (`in`, `out`, `waste`, `adjustment`, nilai tidak valid, dan batas melebihi stok fisik).
+  * `test_master_product_price_and_stock_boundaries`: Nilai batas data master harga produk dan stok awal ($< 0, 0, > 0$).
+* Total automated test meningkat menjadi 20 test cases dan 68 assertions dengan 100% lulus.
+
+### Diperbaiki (Fixed)
+* **BUG-004:** Validasi batas diskon checkout POS pada `SaleController.php` ditambahkan rule `lte:subtotal` untuk mencegah diskon melebihi nilai belanja.
+* **BUG-005:** Validasi batas pengurangan stok pada `InventoryController.php` ditambahkan guard pengecekan stok aktual saat mutasi `out` atau `waste` untuk mencegah nilai stok fisik menjadi negatif.
+
+---
+
 ## [v0.2.0] - 2026-11-09 (Minggu 2: Test Planning & Risk Analysis)
 
 ### Ditambahkan (Added)

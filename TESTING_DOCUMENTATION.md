@@ -25,6 +25,7 @@ Untuk menjalankan file pengujian tertentu:
 ```bash
 php artisan test tests/Feature/MasterDataValidationTest.php
 php artisan test tests/Feature/InventoryBusinessRuleTest.php
+php artisan test tests/Feature/BlackBoxEpBvaTest.php
 php artisan test tests/Feature/AuthenticationTest.php
 php artisan test tests/Feature/RoleAuthorizationTest.php
 php artisan test tests/Feature/GreenScorCalculationTest.php
@@ -32,7 +33,7 @@ php artisan test tests/Feature/GreenScorCalculationTest.php
 
 ---
 
-## 3. Matriks Hasil Pengujian (Perkembangan Minggu 2)
+## 3. Matriks Hasil Pengujian (Perkembangan Minggu 3 - Black-Box EP & BVA)
 
 | Suite Uji | Nama Uji | Jenis | Assertions | Status |
 | :--- | :--- | :---: | :---: | :---: |
@@ -52,5 +53,15 @@ php artisan test tests/Feature/GreenScorCalculationTest.php
 | `MasterDataValidationTest` | `test_supplier_creation_validates_eco_rating` | Feature | 1 | **PASSED** |
 | `InventoryBusinessRuleTest` | `test_sale_cannot_exceed_available_product_stock` | Feature | 2 | **PASSED** |
 | `InventoryBusinessRuleTest` | `test_sale_successfully_reduces_product_stock_and_calculates_total` | Feature | 13 | **PASSED** |
+| `BlackBoxEpBvaTest` | `test_pos_checkout_quantity_boundary_values` | Feature / BVA | 10 | **PASSED** |
+| `BlackBoxEpBvaTest` | `test_pos_checkout_discount_boundary_values` | Feature / BVA | 6 | **PASSED** |
+| `BlackBoxEpBvaTest` | `test_stock_opname_adjustment_equivalence_partitioning` | Feature / EP | 8 | **PASSED** |
+| `BlackBoxEpBvaTest` | `test_master_product_price_and_stock_boundaries` | Feature / BVA | 3 | **PASSED** |
 
-**Total:** 16 Passed (41 assertions) &bull; Durasi: ~3.1 detik &bull; Success Rate: 100%.
+**Total:** 20 Passed (68 assertions) &bull; Durasi: ~20.1 detik &bull; Success Rate: 100%.
+
+---
+
+## 4. Defect yang Ditemukan Melalui Pengujian Black-Box (Minggu 3)
+1. **BUG-004:** Form Checkout POS Kasir mengizinkan input nominal diskon melebihi subtotal belanja tanpa peringatan validasi (`discount_amount > subtotal`). Teratasi dengan penambahan rule validasi `lte:subtotal` pada `SaleController`.
+2. **BUG-005:** Form Penyesuaian Mutasi Stok Keluar (`movement_type = out / waste`) mengizinkan pengurangan melebihi kuantitas stok aktual, menyebabkan stok fisik bertransformasi menjadi nilai negatif. Teratasi dengan validasi batas stok maksimum pada `InventoryController`.

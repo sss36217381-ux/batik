@@ -94,4 +94,7 @@ Semua akun menggunakan kata sandi bawaan: `password`
 ## 📚 Struktur Dokumentasi RPS Mingguan
 Detail perkembangan proyek dari Minggu 1 hingga 16 terdokumentasi pada folder `docs/`:
 * [Laporan Minggu 1 - Fundamental SQA & Baseline](docs/week-01/README.md)
-* `docs/week-02/` s/d `docs/week-16/` (Akan terus diperbarui setiap minggu secara berkelanjutan)
+* [Laporan Minggu 2 - Test Planning & Risk Analysis (IEEE 829)](docs/week-02/README.md)
+* [Laporan Minggu 3 - Black-Box Testing (EP & BVA)](docs/week-03/README.md)
+* `docs/week-04/` s/d `docs/week-16/` (Akan terus diperbarui setiap minggu secara berkelanjutan)
+

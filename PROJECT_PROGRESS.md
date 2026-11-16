@@ -1,12 +1,12 @@
 # PROJECT PROGRESS: ERP BATIK MADURA (16 WEEKS ROADMAP)
 
-Status Proyek: **Minggu 2 Selesai** (Siap Menuju Minggu 3 & 4)
+Status Proyek: **Minggu 3 Selesai** (Siap Menuju Minggu 4)
 
 | Minggu | Materi RPS | Status | Tanggal Penyelesaian | Deliverables Utama |
 | :---: | :--- | :---: | :---: | :--- |
 | **01** | **Fundamental Software Quality Assurance** | **SELESAI** | 2026-11-02 | Inisialisasi Laravel 12, PostgreSQL Schema, 6 Role, Auth, 15 Modul UI, GSCOR Analytics, Unit Testing |
 | **02** | **Test Planning & Risk Analysis** | **SELESAI** | 2026-11-09 | Dokumen Test Plan IEEE 829 (`TEST_PLAN_DOCUMENT.md`), Entry/Exit criteria, Matriks Risiko, 16 Test Cases Passed |
-| **03** | Black-Box Testing (EP & BVA) | Menunggu Perintah | - | Test Case EP & BVA pada modul Form Master Data & Transaksi |
+| **03** | **Black-Box Testing (EP & BVA)** | **SELESAI** | 2026-11-16 | Test Case EP & BVA (`TEST_CASE_BLACKBOX_EP_BVA.md`), Temuan & Perbaikan BUG-004 (Diskon Kasir) dan BUG-005 (Batas Mutasi Stok), 20 Automated Tests Passed |
 | **04** | Advanced Black-Box Testing | Terjadwal | - | Decision Table, State Transition, Use Case Testing |
 | **05** | White-Box Testing & Cyclomatic Complexity | Terjadwal | - | CFG, Basis Path Testing, Cyclomatic Complexity kalkulasi HPP |
 | **06** | API & Integration Testing | Terjadwal | - | REST API Collection, Automated Test Postman & Newman CLI |
@@ -23,7 +23,8 @@ Status Proyek: **Minggu 2 Selesai** (Siap Menuju Minggu 3 & 4)
 
 ---
 
-## 📝 Catatan Audit Perkembangan Terakhir (Minggu 2)
-* Dokumen formal **Test Plan IEEE 829** (`docs/week-02/TEST_PLAN_DOCUMENT.md`) telah disahkan sebagai acuan mutu SQA.
-* Suite pengujian otomatis bertambah menjadi 16 test cases (41 assertions) dengan tingkat kelulusan 100%.
-* Seluruh kode dan laporan tersinkronisasi pada remote repository GitHub `origin/main`.
+## 📝 Catatan Audit Perkembangan Terakhir (Minggu 3)
+* Dokumen uji **Black-Box Testing (EP & BVA)** (`docs/week-03/TEST_CASE_BLACKBOX_EP_BVA.md`) dan laporan pelaksanaan (`docs/week-03/README.md`) telah diselesaikan sesuai target RPS Pekan 3.
+* Ditemukan dan diperbaiki 2 *real defect* kritis: `BUG-004` (Diskon POS melebihi subtotal) dan `BUG-005` (Mutasi stok barang keluar tanpa batas maksimum stok fisik).
+* Suite pengujian otomatis bertambah menjadi 20 test cases (68 assertions) dengan tingkat kelulusan 100%.
+* Seluruh kode, test case, dan laporan siap disinkronkan ke remote repository GitHub `origin/main` dan `tembakau/main`.

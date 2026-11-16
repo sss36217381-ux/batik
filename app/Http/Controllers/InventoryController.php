@@ -33,6 +33,9 @@ class InventoryController extends Controller
         if ($validated['item_type'] === 'product') {
             $item = Product::findOrFail($validated['item_id']);
             if (in_array($validated['movement_type'], ['out', 'waste'])) {
+                if ($item->stock < (int) $validated['quantity']) {
+                    return back()->withInput()->with('error', "Stok fisik produk tidak mencukupi untuk pengurangan (Tersisa: {$item->stock} pcs, Diminta: {$validated['quantity']} pcs).");
+                }
                 $item->decrement('stock', (int) $validated['quantity']);
             } else {
                 $item->increment('stock', (int) $validated['quantity']);
@@ -40,6 +43,9 @@ class InventoryController extends Controller
         } else {
             $item = RawMaterial::findOrFail($validated['item_id']);
             if (in_array($validated['movement_type'], ['out', 'waste'])) {
+                if ($item->stock < (float) $validated['quantity']) {
+                    return back()->withInput()->with('error', "Stok bahan baku tidak mencukupi untuk pengurangan (Tersisa: {$item->stock} {$item->unit}, Diminta: {$validated['quantity']} {$item->unit}).");
+                }
                 $item->decrement('stock', $validated['quantity']);
             } else {
                 $item->increment('stock', $validated['quantity']);

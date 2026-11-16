@@ -39,7 +39,12 @@ class SaleController extends Controller
 
         $subtotal = $validated['quantity'] * $product->selling_price;
         $discount = $validated['discount_amount'] ?? 0;
-        $grandTotal = max(0, $subtotal - $discount);
+
+        if ($discount > $subtotal) {
+            return back()->withInput()->with('error', 'Nilai diskon (Rp '.number_format($discount, 0, ',', '.').') tidak boleh melebihi total belanja (Rp '.number_format($subtotal, 0, ',', '.').').');
+        }
+
+        $grandTotal = $subtotal - $discount;
 
         $sale = Sale::create([
             'invoice_number' => 'INV-'.date('Ymd').'-'.strtoupper(bin2hex(random_bytes(2))),
